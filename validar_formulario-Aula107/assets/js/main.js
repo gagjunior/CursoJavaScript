@@ -14,6 +14,11 @@ class ValidaFormulario {
         e.preventDefault();
         const camposValidos = this.verificarCampos();
         const senhasValidas = this.senhasValidas();
+
+        if (camposValidos && senhasValidas) {
+            alert('Formulario enviado')
+            this.formulario.submit();            
+        }
     }
 
     verificarCampos() {
@@ -79,6 +84,7 @@ class ValidaFormulario {
 
     senhasValidas() {
         let valid = true;
+
         const senha = this.formulario.querySelector('.senha');
         const senhaRepetida = this.formulario.querySelector('.repetir-senha');
 
