@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":";;;;;AAAAA,KAAK,CAAC,cAAD,CAAL,C","sources":["webpack://webpack_aula116/./src/index.js"],"sourcesContent":["alert('Deu certo!!!')"],"names":["alert"],"sourceRoot":""}
