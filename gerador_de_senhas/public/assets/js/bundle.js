@@ -15,7 +15,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _geradores__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./geradores */ "./src/modules/geradores.js");
 
 var senhaGerada = document.querySelector('.senha-gerada');
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {});
+var qtdCaracteres = document.querySelector('.qtd-caracteres');
+var chkMaiusculas = document.querySelector('.chk-maiusculas');
+var chkMinusculas = document.querySelector('.chk-minusculas');
+var chkNumeros = document.querySelector('.chk-numeros');
+var chkSimbolos = document.querySelector('.chk-simbolos');
+var btnGerarSenha = document.querySelector('.gerar-senha');
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (function () {
+  btnGerarSenha.addEventListener('click', function (e) {
+    senhaGerada.innerHTML = gerar();
+  });
+});
+
+function gerar() {
+  return (0,_geradores__WEBPACK_IMPORTED_MODULE_0__["default"])(qtdCaracteres.value, chkMaiusculas.checked, chkMinusculas.checked, chkNumeros.checked, chkSimbolos.checked) || 'Nada selecionado';
+}
 
 /***/ }),
 
