@@ -1,5 +1,5 @@
 exports.paginaInicial = (req, res) => {
-    res.send('Olá mundo!!')
+    res.render('index');
 }
 
 exports.trataPost = (req, res) => {
