@@ -1,0 +1,1 @@
+mongodb+srv://gagjunior:<password>@cursojs.nmioa.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
