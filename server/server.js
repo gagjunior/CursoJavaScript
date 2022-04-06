@@ -3,6 +3,7 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const mongoose = require('mongoose')
+const { middlewareGlobal } = require('./src/middlewares/middleware');
 
 mongoose.connect(process.env.CONNECTION_STRING, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
@@ -16,7 +17,8 @@ const MongoStore = require('connect-mongo')
 const flash = require('connect-flash')
 
 const routes = require('./routes')
-const path = require('path')
+const path = require('path');
+
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(__dirname, 'public')))
@@ -37,6 +39,7 @@ app.use(flash())
 app.set('views', path.resolve(__dirname, 'src', 'views'));
 app.set('view engine', 'ejs');
 
+app.use(middlewareGlobal)
 app.use(routes);
 
 app.on('pronto', () => {
